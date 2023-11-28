@@ -1,0 +1,13 @@
+<div class="line-item">
+  <div class="media">
+    <div class="media-left">
+      <%= image_tag line_item.product.image.tiny.url, class: 'media-object' %>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading"><%= line_item.product.name %></h4>
+      <p><%= line_item.product.description %></p>
+      <p><strong>Quantity:</strong> <%= line_item.quantity %></p>
+      <p><strong>Line Item Total:</strong> <%= line_item.total_price %></p>
+    </div>
+  </div>
+</div>
