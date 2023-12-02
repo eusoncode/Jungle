@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get 'categories/new'
     get 'categories/create'
   end
+  
   root to: 'products#index'
 
   resources :products, only: [:index, :show]
