@@ -68,6 +68,7 @@
       font-size: 1em;
       padding-left: 1em;
       padding-right: 1em;
+      margin-left: 30px;
       background-color: rgba(0, 130, 29, 0.7);
       color: white;
       font-weight: 700;
@@ -86,6 +87,11 @@
       color: white;
       font-weight: 700;
       text-align: center;
+    }
+    .soldout_price {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
     }
   }
 }
