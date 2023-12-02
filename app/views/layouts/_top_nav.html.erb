@@ -6,6 +6,7 @@
     <h2>Where you can find any plants!</h2>
   </section>
 </header>
+
 <nav class="navbar navbar-expand-lg navbar-dark sticky-nav">
   <div class="container">
     <a class="navbar-brand" href="<%= root_path %>">Jungle</a>
@@ -63,26 +64,34 @@
           <%= link_to cart_path, class: "nav-link " do %> <%= fa_icon "shopping-cart" %>
           My Cart (<%= cart.size %>) <% end %>
         </li>
+        <li class="nav-item, nav-item-in">
+          <% if current_user %>
+            Signed in as <%= current_user.first_name %> | <%= link_to 'Logout', session_path(current_user), class: "nav-link ", method: :delete %>
+          <% else %>
+            <%= link_to 'Login', new_session_path, class: "nav-link" %> | <%= link_to 'Signup', new_user_path, class: "nav-link" %>
+          <% end %>          
+        </li>
       </ul>
     </div>
   </div>
 </nav>
+
 <script>
-(function(){
-const gnr = () => {
-    const uptitle = document.querySelector("section.title h3");
-    const subtitle = document.querySelector("section.title h2");
-    const header = document.querySelector("header.hero");
+  (function(){
+  const gnr = () => {
+      const uptitle = document.querySelector("section.title h3");
+      const subtitle = document.querySelector("section.title h2");
+      const header = document.querySelector("header.hero");
 
-    uptitle.style.fontSize = "5em";
-    uptitle.style.fontWeight = 900;
-    uptitle.style.textAlign = "center";
+      uptitle.style.fontSize = "5em";
+      uptitle.style.fontWeight = 900;
+      uptitle.style.textAlign = "center";
 
-    subtitle.innerHTML =
-      "<p>Watch it bring you to your</p><p> shu-n-n-n-n-n-n-n-n knees, knees!</p>";
-  };
-  const title = document.querySelector("header.hero");
-  title.addEventListener("dblclick", gnr);
-  
-})()
-  </script>
+      subtitle.innerHTML =
+        "<p>Watch it bring you to your</p><p> shu-n-n-n-n-n-n-n-n knees, knees!</p>";
+    };
+    const title = document.querySelector("header.hero");
+    title.addEventListener("dblclick", gnr);
+    
+  })()  
+</script>
